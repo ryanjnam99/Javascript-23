@@ -1,0 +1,15 @@
+button {
+    background-color: blue;
+    color: white;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+}
