@@ -1,27 +1,28 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const Pokemon = (props) => {
     const [pokemon, setPokemon] = useState([]);
-    const getPokemon = async () => {
-        try {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=807');
-            const data = await response.json();
-            const name = data.results.map(pokemon => pokemon.name);
-            setPokemon(name);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    const getPokemonAxios = () => {
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
+            .then(res=>setPokemon(res.data.results))
+            .catch(err=>console.log(err))
+    }
     return (
         <div>
-            <button onClick={getPokemon}>Fetch Pokemon</button>
+            <button onClick={getPokemonAxios}>Fetch Pokemon</button>
             <ul>
-                {pokemon.map((name, index) => (
-                    <li key={index}>{name}</li>
-                ))}
+                {pokemon.map((pokemon, i) => {
+                    return (
+                        <li>{pokemon.name}</li>
+                        // the name comes from res.data.results
+                    )
+                })}
             </ul>
         </div>
     )
 }
+
+
 
 export default Pokemon
