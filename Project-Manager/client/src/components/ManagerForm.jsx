@@ -17,6 +17,7 @@ const ManagerForm = () => {
     }
     return (
         <div>
+            <h2>Product Manager</h2>
             <form onSubmit={submitHandler}>
                 <p>
                     <label>Title</label><br/>

@@ -20,6 +20,7 @@ const Main = (props) => {
         <div>
             <ManagerForm/>
             <hr/>
+            <h2>All Products</h2>
             {loaded && <ManagerList managers={managers}/>}
         </div>
     )
