@@ -7,7 +7,7 @@ const ManagerForm = () => {
     const [Description, setDescription] = useState("");
     const submitHandler = e => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/managers', {
+        axios.post('http://localhost:8000/api/products', {
             Title,
             Price, 
             Description
