@@ -3,6 +3,7 @@ import { Routes, Route, Link, useParams } from "react-router-dom";
 import Main from './views/Main';
 import Detail from './views/Detail';
 
+
 function App() {
   return (
     <div className="App">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import ManagerForm from '../components/ManagerForm';
 import ManagerList from '../components/ManagerList';
 
@@ -21,7 +22,8 @@ const Main = (props) => {
             <ManagerForm/>
             <hr/>
             <h2>All Products</h2>
-            {loaded && <ManagerList managers={managers}/>}
+            {loaded &&
+                <ManagerList managers={managers}/>}
         </div>
     )
 }
