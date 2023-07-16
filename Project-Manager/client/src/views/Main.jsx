@@ -17,13 +17,16 @@ const Main = (props) => {
             })
             .catch(err => console.error(err));
     }, []);
+    const removeFromDom = managerId => {
+        setManagers(managers.filter(manager => manager._id !== managerId));
+    }
     return (
         <div>
             <ManagerForm/>
             <hr/>
             <h2>All Products</h2>
             {loaded &&
-                <ManagerList managers={managers}/>}
+                <ManagerList managers={managers} removeFromDom={removeFromDom}/>}
         </div>
     )
 }

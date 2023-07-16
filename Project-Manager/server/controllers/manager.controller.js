@@ -24,3 +24,16 @@ module.exports.getManager = (request, response) => {
     .catch(err => response.json(err))
 }
 
+module.exports.updateManager = (request, response) => {
+    Manager.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+        .then(updatedManager => response.json(updatedManager))
+        .catch(err => response.json(err))
+
+}
+
+module.exports.deleteManager = (request, response) => {
+    Manager.deleteOne({_id: request.params.id})
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
+}
+
